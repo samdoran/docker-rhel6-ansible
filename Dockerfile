@@ -15,4 +15,4 @@ RUN sed -i 's/Defaults    requiretty/Defaults    !requiretty/g' /etc/sudoers
 RUN echo -e '[local]\nlocalhost ansible_connection=local' > /etc/ansible/hosts
 
 VOLUME ["/sys/fs/cgroup"]
-CMD ["/usr/sbin/init"]
+CMD ["/sbin/init"]
