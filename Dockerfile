@@ -4,7 +4,7 @@ ARG RHN_PASSWORD
 
 RUN subscription-manager register --username=$RHN_USERNAME --password=$RHN_PASSWORD --autosubscribe \
     && yum -y install http://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm \
-    && yum -y --enablerepo=epel-testing install ansible initscripts sudo cronie \
+    && yum -y --enablerepo=epel-testing install ansible python-jinja2 initscripts sudo cronie \
     && yum -y update \
     && yum clean all \
     && subscription-manager unregister
