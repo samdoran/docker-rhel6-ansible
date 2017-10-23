@@ -6,7 +6,7 @@ RUN subscription-manager register --username=$RHN_USERNAME --password=$RHN_PASSW
     && yum -y install http://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm \
     && yum -y --enablerepo=epel-testing install ansible python-jinja2 initscripts sudo cronie \
     && yum -y update \
-    && yum clean all \
+    && rm -rf /var/cache/yum \
     && subscription-manager unregister
 
 RUN sed -i 's/Defaults    requiretty/Defaults    !requiretty/g' /etc/sudoers
