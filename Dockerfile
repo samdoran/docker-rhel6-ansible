@@ -1,12 +1,12 @@
 FROM registry.access.redhat.com/rhel6
-ARG RHN_USERNAME
-ARG RHN_PASSWORD
-ARG POOL_ID
+ARG RHSM_USERNAME
+ARG RHSM_PASSWORD
+ARG RHSM_POOL_ID
 
-RUN subscription-manager register --username=$RHN_USERNAME --password=$RHN_PASSWORD \
-    && subscription-manager attach --pool=$POOL_ID \
+RUN subscription-manager register --username=$RHSM_USERNAME --password=$RHSM_PASSWORD \
+    && subscription-manager attach --pool=$RHSM_POOL_ID \
     && yum -y install http://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm \
-    && yum -y --enablerepo=epel-testing install ansible python-jinja2 initscripts sudo cronie \
+    && yum -y install --enablerepo=epel-testing ansible python-jinja2 initscripts sudo cronie \
     && yum -y update \
     && rm -rf /var/cache/yum \
     && subscription-manager unregister
