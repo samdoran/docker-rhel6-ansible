@@ -1,5 +1,5 @@
 # RHEL 6 Ansible Test Image #
-[![Build Status](https://travis-ci.org/samdoran/docker-rhel6-ansible.svg?branch=master)](https://travis-ci.org/samdoran/docker-rhel6-ansible) [![Docker Pulls](https://img.shields.io/docker/pulls/samdoran/rhel6-ansible.svg)](https://cloud.docker.com/repository/docker/samdoran/rhel6-ansible)
+[![Docker Repository on Quay](https://quay.io/repository/samdoran/rhel6-ansible/status "Docker Repository on Quay")](https://quay.io/repository/samdoran/rhel6-ansible)
 
 This is a container for testing Ansible roles with [Molecule](https://molecule.readthedocs.io/en/stable/). It includes the latest version of Ansible available on this platform and is rebuilt regularly. It can also be used if you need to run Ansible on a specific operating system.
 
